@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "title": "Trump or Clinton?",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "content": "Trump or Clinton? First comment"
+    },
+    {
+      "id": 2,
+      "postId": 1,
+      "content": "Trump or Clinton? Second comment"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+#add-button {
+  vertical-align: text-bottom;
+}
+
+.comments {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comments li {
+  position: relative;
+  left: 0;
+  background-color: #e4f0f3;
+  margin: .5em .5em .5em 0;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.comments .text {
+  position: relative;
+  top: -3px;
+}
+
+button.delete-button{
+  float:right;
+  background-color: gray !important;
+  background-color: rgb(216,59,1) !important;
+  color:white;
+}

@@ -1,0 +1,17 @@
+<div *ngIf="comments">
+    <h3>{{post.title}}</h3>
+    <div>
+        <textarea rows="4" cols="40" [(ngModel)]="comment.content" placeholder="What is in your mind?"> </textarea>
+        <button id="add-button" (click)="save()">Add</button>
+    </div>
+    <ul class="comments">
+        <li *ngFor="let comment of comments">
+            <span class="comment-element">{{comment.content}}</span>
+            <button class="delete-button" (click)="deleteComment(comment, $event)">Delete</button>
+        </li>
+    </ul>
+</div>
+
+
+
+
