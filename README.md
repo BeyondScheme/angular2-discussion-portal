@@ -2,7 +2,9 @@
 
 ## Description
 This project is a discussion portal written in Angular 2 which periodically pulls data from backend to keep fresh data on UI without refreshing the page.
+
 It is derived from the official Angular 2 Documentation which can be found [here](https://angular.io/docs/ts/latest/tutorial/).
+
 Quick demo:
 <img src="/demo.gif"/>
 
