@@ -33,6 +33,8 @@ export class PostComponent implements OnInit, OnDestroy {
                 let id: number = +params[PostComponent.ID_ROUTE_PARAM];
                 this.postService.getPost(id).subscribe(post => {
                     this.post = post;
+                    this.comment = new Comment();
+                    this.comment.postId = this.post.id;
                     this.refreshData();
                 });
             } else {
