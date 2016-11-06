@@ -47,7 +47,7 @@ Please remember that when you change json-server port you have to fix urls in fi
 
 # About Beyond Scheme
 
-Game Of Life in Elixir is maintained by [BeyondScheme.com](http://beyondscheme.com/?utm_source=github)
+Angular 2 discussion portal is maintained by [BeyondScheme.com](http://beyondscheme.com/?utm_source=github)
 
 Yet another software engineers, are we?
 We build web applications on a daily basis.
