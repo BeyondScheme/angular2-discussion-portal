@@ -7,8 +7,7 @@ import {AnonymousSubscription} from "rxjs/Subscription";
 
 @Component({
     selector: "dashboard",
-    styleUrls: ["app/css/dashboard.component.css"],
-    templateUrl: "../../../src/html/dashboard/dashboard.component.html",
+    templateUrl: "/src/html/dashboard/dashboard.component.html",
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 

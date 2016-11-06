@@ -31,6 +31,7 @@
     "concurrently": "^2.0.0",
     "gulp": "^3.9.0",
     "gulp-ext-replace": "^0.2.0",
+    "gulp-inline-ng2-template": "^4.0.0",
     "gulp-postcss": "^6.0.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "6.1.2",

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var ext_replace = require('gulp-ext-replace');
 var tslint = require('gulp-tslint');
+var inlineNg2Template = require('gulp-inline-ng2-template');
 /* CSS */
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
@@ -13,7 +14,7 @@ var tsProject = typescript.createProject('tsconfig.json');
 var paths = {
   src: {
     ts: './src/ts/**/*.ts',
-    scss: './src/scss/**/*.scss'
+    scss: './src/scss/app.scss'
   },
   dest: {
     js: './app/js',
@@ -29,12 +30,13 @@ gulp.task("tslint", function () {
         .pipe(tslint.report());
 });
 
-gulp.task('build-ts' , ["tslint"], function () {
-  return gulp.src(paths.src.ts)
-    .pipe(sourcemaps.init())
-    .pipe(typescript(tsProject))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.dest.js));
+gulp.task('build-ts', ["tslint", "build-css"], function () {
+    return gulp.src(paths.src.ts)
+        .pipe(inlineNg2Template())
+        .pipe(sourcemaps.init())
+        .pipe(typescript(tsProject))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dest.js));
 });
 
 gulp.task('build-css', function () {

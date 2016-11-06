@@ -10,8 +10,7 @@ import {AnonymousSubscription} from "rxjs/Subscription";
 @Component({
     providers: [CommentService],
     selector: "bid",
-    styleUrls: ["app/css/post.component.css"],
-    templateUrl: "../../../src/html/post/post.component.html",
+    templateUrl: "src/html/post/post.component.html",
 })
 export class PostComponent implements OnInit, OnDestroy {
 
