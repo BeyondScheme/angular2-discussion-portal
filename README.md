@@ -35,10 +35,15 @@ npm start
 # Port bindings
 Json-server is bind to port 3000, lite server to port 8000 (application is visible at this port) and BrowserSync (used by lite server) to port 8001.
 You can change lite server and BrowserSync ports in `bs-config.json`. Json-server port can be changed in `package.json` file by changing:
+
 `"start": "concurrent \"json-server --watch db.json\" \"npm run gulp\" \"npm run lite\" "` to:
+
 `"start": "concurrent \"json-server --watch db.json --port NEW_PORT\" \"npm run gulp\" \"npm run lite\" "`
+
 Please remember that when you change json-server port you have to fix urls in files:
-`post.service.ts` and `comment.service.ts`
+
+* [`post.service.ts`](https://github.com/BeyondScheme/angular2-discussion-portal/blob/master/src/ts/post/services/comment.service.ts) 
+* [`comment.service.ts`](https://github.com/BeyondScheme/angular2-discussion-portal/blob/master/src/ts/shared/services/post.service.ts)
 
 # About Beyond Scheme
 
