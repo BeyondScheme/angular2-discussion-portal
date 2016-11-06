@@ -42,8 +42,8 @@ You can change lite server and BrowserSync ports in `bs-config.json`. Json-serve
 
 Please remember that when you change json-server port you have to fix urls in files:
 
-* [`post.service.ts`](https://github.com/BeyondScheme/angular2-discussion-portal/blob/master/src/ts/post/services/comment.service.ts) 
-* [`comment.service.ts`](https://github.com/BeyondScheme/angular2-discussion-portal/blob/master/src/ts/shared/services/post.service.ts)
+* [`comment.service.ts`](https://github.com/BeyondScheme/angular2-discussion-portal/blob/master/src/ts/post/services/comment.service.ts) 
+* [`post.service.ts`](https://github.com/BeyondScheme/angular2-discussion-portal/blob/master/src/ts/shared/services/post.service.ts)
 
 # About Beyond Scheme
 
