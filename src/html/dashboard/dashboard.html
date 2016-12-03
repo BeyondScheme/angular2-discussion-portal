@@ -5,7 +5,7 @@
 <div>
     <h3>Posts</h3>
     <div class="grid grid-pad">
-        <div *ngFor="let post of posts" (click)="gotoPost(post)" class="col-2">
+        <div *ngFor="let post of posts" [routerLink]="['/post', post.id]" class="col-2">
             <div class="module post">
                 <h4>{{post.title}}</h4>
                 <button class="delete-button" (click)="deletePost(post, $event)">X</button>

@@ -1,13 +1,12 @@
 import {Post} from "../../shared/models/post";
 import {PostService} from "../../shared/services/post.service";
 import {Component, OnDestroy, OnInit} from "@angular/core";
-import {Router} from "@angular/router";
 import {Observable} from "rxjs/Observable";
 import {AnonymousSubscription} from "rxjs/Subscription";
 
 @Component({
     selector: "dashboard",
-    templateUrl: "/src/html/dashboard/dashboard.component.html",
+    templateUrl: "/src/html/dashboard/dashboard.html",
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
@@ -16,7 +15,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     private posts: Post[];
     private post: Post;
 
-    constructor(private router: Router, private postService: PostService) {
+    constructor(private postService: PostService) {
         this.post = new Post();
     }
 
@@ -36,25 +35,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
     public save(): void {
         this.postService
             .save(this.post)
-            .subscribe(bid => {
-                this.posts.unshift(bid);
+            .subscribe(post => {
+                this.posts.unshift(post);
                 this.post = new Post();
             });
     }
 
-    public deletePost(post: Post, event: any): void {
+    public deletePost(postToDelete: Post, event: any): void {
         event.stopPropagation();
-        this.postService
-            .delete(post)
-            .subscribe(() => {
-                this.posts = this.posts.filter((returnableObjects: Post) => {
-                    return returnableObjects.id !== post.id;
-                });
-            });
-    }
-
-    public gotoPost(post: Post): void {
-        this.router.navigate(["/posts", post.id]);
+        this.postService.delete(postToDelete).subscribe(() => {
+            this.posts = this.posts.filter((post: Post) => post.id !== postToDelete.id);
+        });
     }
 
     private refreshData(): void {
